@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -23,6 +24,7 @@ namespace BookStore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            //services.AddMvc();  // ALSO, we can add MVC like this
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,18 +38,63 @@ namespace BookStore
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
+            //app.Use(async (context, next) =>
+            //{
+            //    await context.Response.WriteAsync("Hello from my first middleware\n");
+
+            //    await next();
+
+            //    await context.Response.WriteAsync("Hello from my first middleware Response\n");
+            //});
+
+            //app.Use(async (context, next) =>
+            //{
+            //    await context.Response.WriteAsync("Hello from my Second middleware\n");
+
+            //    await next();
+
+            //    await context.Response.WriteAsync("Hello from my second middleware Response\n");
+
+            //});
+
+            //app.Use(async (context, next) =>
+            //{
+            //    await context.Response.WriteAsync("Hello from my third middleware\n");
+
+            //    await next();
+            //});
+
             app.UseStaticFiles();
 
-            app.UseRouting();
+            app.UseRouting();  // here, order is very important..!!
 
-            app.UseAuthorization();
+
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    endpoints.Map("/", async context =>
+            //    {
+            //        if(env.IsDevelopment())
+            //            await context.Response.WriteAsync("Hello from DEV");
+            //        else if(env.IsProduction())
+            //            await context.Response.WriteAsync("Hello from PROD");
+            //        else if (env.IsStaging()) 
+            //            await context.Response.WriteAsync("Hello from STAG");
+            //        else
+            //            await context.Response.WriteAsync(env.EnvironmentName);
+
+            //        // ALSO. i can write as if(env.IsEnvironmwnt("Develop"))
+            //        //{
+            //        //    await context.Response.WriteAsync("Hello from DEV");
+            //        //}
+            //    });
+            //});
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapDefaultControllerRoute();
             });
+
         }
     }
 }
