@@ -36,3 +36,7 @@ C:\MVC core\BookStore\BookStore\BookStore\obj\Debug\netcoreapp3.1\BookStore.dll
 C:\MVC core\BookStore\BookStore\BookStore\obj\Debug\netcoreapp3.1\BookStore.pdb
 C:\MVC core\BookStore\BookStore\BookStore\obj\Debug\netcoreapp3.1\BookStore.genruntimeconfig.cache
 C:\MVC core\BookStore\BookStore\BookStore\obj\Debug\netcoreapp3.1\BookStore.csproj.CopyComplete
+C:\MVC core\BookStore\BookStore\BookStore\obj\Debug\netcoreapp3.1\Razor\Views\Book\GetAllBooks.cshtml.g.cs
+C:\MVC core\BookStore\BookStore\BookStore\obj\Debug\netcoreapp3.1\Razor\Views\Home\AboutUs.cshtml.g.cs
+C:\MVC core\BookStore\BookStore\BookStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\ContactUS.cshtml.g.cs
+C:\MVC core\BookStore\BookStore\BookStore\obj\Debug\netcoreapp3.1\Razor\TempView\JanviTemp.cshtml.g.cs

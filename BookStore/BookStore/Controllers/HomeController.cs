@@ -34,9 +34,20 @@ namespace BookStore.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        public string Index()
+        public ViewResult Index()
         {
-            return "BookStores..!!";
+            // return View("~/TempView/JanviTemp.cshtml");  // For calling the other location which is not available in Views folder
+
+             return View(); // If i write this way, then it return Home page index.cshtml
+            // return View("ContactUS"); // but if i written this way, then it's return comntactus page ;)
+
+            //var obj = new { Id = 1, name = "Janvi" };
+            //return View("ContactUs" ,obj);
+        }
+        
+        public ViewResult AboutUs()
+        {
+            return View();
         }
     }
 }

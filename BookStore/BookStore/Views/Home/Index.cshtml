@@ -3,6 +3,96 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome__ Welcome__ !!</h1>
+    <h3>@DateTime.Now</h3>
+    <h3>@DateTime.Now.ToString("dd-mm-yy")</h3>
+    <p>// it is singleline Razor syntax </p>
+
+    <h5>Sum of 3 &amp; 5 = @(3+5)</h5>
+
+    <h2>Multiline Razor syntax</h2>
+    @{
+        int a = 10;
+        int b = 2;
+        int c = a / b;
+    }
+
+    <h5>Mukltiplication of @a &amp; @b = @c </h5>
+
+    <strong> My Email :- </strong> Janvid.2001@gmail.com
+    <br />
+    <strong> Twitter :- </strong> @@Janvi_1720
+    <br />
+    <p>This is Home page..!!</p>
+
+    <p>--------------------Conditional statement--------------------</p>
+
+    @if (true)
+    {
+        <h6>Hello from "if" BLOCK</h6>
+    }
+
+    @{
+        int z = 5;
+    }
+
+    @if (z > 10)
+    {
+        //@a++; // If I write this expression with @, then it'll give error . beacause of it is already in C# section. So, we have not need to write expression with @'
+        // We can only return by a++;
+
+        z++;
+        <div>@z is "z"</div>
+        <div>5 is greater than 10 [IF]</div>
+    }
+    else if (z == 5)
+    {
+        <div>5 is 5 [ELSE IF]</div>
+    }
+    else
+    {
+        z--;
+        <div>@z is "z after z--"</div> // here z-- is not perform in "z--"
+        <div>5 is less than 10 [ELSE]</div>
+    }
+
+    <h6>Value of b = @b before Ternary</h6>
+
+    <div>Ternary :- a=@a , b=@(a==1 ? b=10 : b=6)</div>
+
+    <h6>Value of b = @b after Ternary</h6>
+
+    <h3>Switch - </h3>
+    @switch (a)
+    {
+        case 5:<h4>I am 5</h4>
+            break;
+        case 10: <h4>I am 10</h4>
+            break;
+        case 15: <h4>I am 15</h4>
+            break;
+        case 20: <h4>I am 20</h4>
+            break;
+        default: <h4>I am default</h4>
+            break;
+    }
+
+    <p>--------------------LOOPS--------------------</p>
+
+    @for(int i=0;i< 10; i++)
+    {
+        <div>I'm @(i+1) from For loop. </div>
+    }
+    
+    <br />
+
+    @{ 
+        var list = new List<int>() { 1, 2, 3, 4, 5 };
+    }
+
+    @foreach(var item in list)
+    {
+        <div>I'm @item from foreach loop of List</div>
+    }
+
 </div>
